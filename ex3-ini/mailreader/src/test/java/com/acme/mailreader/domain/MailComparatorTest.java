@@ -28,10 +28,34 @@ public class MailComparatorTest {
 		Mail mail2 = null;
 		assertThat(comparator.compare(mail1, mail2), is(0));
 	}
+
+	@Test
+	public final void moinsUnSiPremierMailPlusImportantQUeLautre() {
+		Mail mail = new Mail();
+		Mail other = new Mail();
+		mail.setImportant(true);
+		other.setImportant(false);
+		assertThat(comparator.compare(mail, other), is(-1));
+	}
 	
-	//TODO
-	//Autres tests unitaires
+	@Test
+	public final void unSiPremierMailMoinsImportantQUeLautre() {
+		Mail mail = new Mail();
+		Mail other = new Mail();
+		mail.setImportant(false);
+		other.setImportant(true);
+		assertThat(comparator.compare(mail, other), is(1));
+	}
 	
-	
-	
+	@Test
+	public final void moinsUnSiPremierMailAUnSujetEtLeDeuxiemeNon() {
+		Mail mail = new Mail();
+		Mail other = new Mail();
+		mail.setImportant(true);
+		other.setImportant(true);
+		
+		mail.setSujet("Hey");
+		
+		assertThat(comparator.compare(mail, other), is(-1));
+	}
 }
