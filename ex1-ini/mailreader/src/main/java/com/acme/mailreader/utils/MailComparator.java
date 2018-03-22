@@ -11,27 +11,31 @@ import com.acme.mailreader.model.Mail;
  *
  */
 public class MailComparator implements Comparator<Mail> {
-
-	public int compare(Mail obj1, Mail obj2) {
-		if (obj1 == null || obj2 == null) {
-			return 0;
+	
+	public final static int IMPOSSIBLE_COMPARAISON = 0;
+	public final static int MAIL_MORE_IMPORTANT = -1;
+	public final static int OTHER_MORE_IMPORTANT = 1;
+	
+	public int compare(Mail mail, Mail other) {
+		if (mail == null || other == null) {
+			return IMPOSSIBLE_COMPARAISON;
 		}
-		if (obj1.isImportant() != obj2.isImportant()) {
-			if (obj1.isImportant() && !obj2.isImportant()) {
-				return -1;
-			} else {
-				return 1;
-			}
+		if (mail.isImportant() != other.isImportant()) {
+			if (mail.isImportant() && !other.isImportant()) {
+				return MAIL_MORE_IMPORTANT;
+			} 
+			
+			return OTHER_MORE_IMPORTANT;		
 		}
-		if (obj1.getStatut() != obj2.getStatut()) {
-			int comp = obj1.getStatut().ordinal()
-					- obj2.getStatut().ordinal();
-			return comp > 0 ? -1 : 1;
+		if (mail.getStatut() != other.getStatut()) {
+			int comp = mail.getStatut().ordinal()
+					- other.getStatut().ordinal();
+			return comp > IMPOSSIBLE_COMPARAISON ? MAIL_MORE_IMPORTANT : OTHER_MORE_IMPORTANT;
 		}
-		if (obj1.getSujet() != obj2.getSujet()) {
-			return obj2.getSujet().compareTo(obj1.getSujet());
+		if (mail.getSujet() != other.getSujet()) {
+			return other.getSujet().compareTo(mail.getSujet());
 		}
-		return obj2.getDate().compareTo(obj1.getDate());
+		return other.getDate().compareTo(mail.getDate());
 	}
 	
 
