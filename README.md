@@ -6,6 +6,8 @@ M1 MIAGE Classique.
 Nous avons démarré le TP en codant en anglais puis dès que nous avons commencé l'exo 2 nous avons respecté le
 français instauré dans le TP pour les variables/méthodes etc.... Seul l'exercice 1 est "en anglais".
 
+Git étant maitrisé, il ne devrait y avoir aucune erreur de merge/récupération de vos modifications, tout a été pull.
+
 
 ## Exercice 1,2,3,4
 
