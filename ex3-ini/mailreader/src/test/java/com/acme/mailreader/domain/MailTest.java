@@ -5,7 +5,6 @@ import static org.hamcrest.core.Is.is;
 
 import java.time.Instant;
 
-import org.hamcrest.core.Is;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -20,8 +19,7 @@ public class MailTest {
 	@Ignore
 	@Test(expected=DateIncorrecteException.class)
 	public final void erreurSiDateAvant1970() throws DateIncorrecteException {
-		//TODO
-				
+		new Mail.Builder("sujet").date(Instant.parse("1918-03-25T12:00:00.00Z")).build();			
 	}
 	
 	@Test
