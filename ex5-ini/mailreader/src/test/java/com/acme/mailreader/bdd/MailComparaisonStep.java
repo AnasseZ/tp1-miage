@@ -43,7 +43,6 @@ public class MailComparaisonStep {
 	@Given("^un premier mail avec l'importance \"([^\"]*)\", le statut \"([^\"]*)\", le sujet \"([^\"]*)\" et la date \"([^\"]*)\"$")
 	public void un_premier_mail(boolean importance, Statut statut,
 			String sujet, String date) throws DateIncorrecteException {
-		//TODO
 		mail1 = new Mail.Builder(sujet)
 				.statut(statut)
 				.date(Instant.parse(date))
@@ -60,7 +59,6 @@ public class MailComparaisonStep {
 				.important(importance)
 				.build();
 	}
-
 
 	@When("^je trie$")
 	public void je_trie() throws Throwable {
