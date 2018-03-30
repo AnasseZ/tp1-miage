@@ -6,6 +6,7 @@ import java.util.List;
 import com.acme.mailreader.domain.Mail;
 import com.acme.mailreader.utils.MailInvalideException;
 import com.acme.mailreader.utils.MailInvalideException.ErreurMail;
+import com.google.inject.Inject;
 import com.acme.mailreader.utils.MailSender;
 
 public class MailService {
@@ -15,9 +16,10 @@ public class MailService {
 	//TODO : injecter par constructeur un sender
 	private MailSender sender;
 	
-	
+	@Inject
 	public MailService(MailSender sender) {
 		super();
+		this.sender = sender;
 	}
 
 	/**
