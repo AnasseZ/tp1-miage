@@ -2,7 +2,14 @@
 Zougarh Anasse, Mentache Boubaker.
 M1 MIAGE Classique.
 
+
+## Exercice 1,2,3,4
+
+Tout a été fait.
+
 ## Exercice 5
+
+
 
 ##### Réponse à la question 4
 Non. Les steps ayant étaient écris au prélable, les verifications sont faites donc dans les méthodes liées 
