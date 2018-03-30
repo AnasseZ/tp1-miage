@@ -2,6 +2,10 @@
 Zougarh Anasse, Mentache Boubaker.
 M1 MIAGE Classique.
 
+## Précision
+Nous avons démarré le TP en codant en anglais puis dès que nous avons commencé l'exo 2 nous avons respecté le
+français instauré dans le TP pour les variables/méthodes etc.... Seul l'exercice 1 est "en anglais".
+
 
 ## Exercice 1,2,3,4
 
